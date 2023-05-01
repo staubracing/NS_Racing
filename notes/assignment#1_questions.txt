@@ -1,0 +1,27 @@
+/*
+	List of questions as I encounter issues or thoughts
+*/
+
+1 - Safemath.sol   Do I import the file or copy the code in to the file.   I know I can import to where i need it (import "./safemath.sol";) just wondering about the source file.  
+
+2 - pragma solidity version?  How do I how what version to use? based on complier only?
+
+3 - can I deploy locally first using ganache?  or is that used to deploy to sepolia.  Seems like with ganache I created a local network. <- answered.  Not sure I need it at all.  It appears to be like a local blockchain.
+
+4 - .env file?  where is this file located?  I see it in the code but not in the file structure.  Is this a file I need to create? <- answered
+
+5. - THe hardhat.config file.  I did it diferent than you did.  But I understand how you did it.  Just have questions on....
+
+		   sepolia: {
+      		url: process.env.SEPOLIA_URL || "",
+      		accounts:
+        		process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [], // this is the line I am not sure about
+		   }
+
+6. Okay with tests,  What is going on? is chai creating a something that pretends it's calling the contract and testing all its functions?
+
+7. My test failed for total supply failed at first, I didnt have the correct number in the test `expect(await StaubToken.totalSupply()).to.equal(ethers.utils.parseEther("1000000"));` I had 10000000000000.  wha tis ethers.utils.parseEhter?
+
+8. That brings up another question, How do I know what to test?  Test each function/event?
+
+9. 

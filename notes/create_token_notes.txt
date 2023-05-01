@@ -1,0 +1,63 @@
+ 
+ //TODO:
+ 
+ -- Create Name
+ 
+ -- Create symbol
+ 
+ -- detemine supply
+ 
+ 
+ 
+// TODO minumum functions:
+
+
+-- totalSupply: A method that defines the total supply of your tokens, When this limit is reached the smart contract will refuse to create new tokens.
+
+-- balanceOf: A method that returns the number of tokens a wallet address has.
+
+-- transfer: A method that takes a certain amount of tokens from the total supply and gives it to a user.
+
+-- transferFrom: Another type of transfer method which is used to transfer tokens between users.
+
+-- approve: This method verifies whether a smart contract is allowed to allocate a certain amount of tokens to a user, considering the total supply.
+
+-- allowance: This method is exactly the same as the approved method except that it checks if one user has enough balance to send a certain amount of tokens to another.
+
+
+Notes:  
+
+	Initialize new npm project `npm init -y`
+	
+	Install Hardhat `npx hardhat`
+		empty project
+	Install hardhat locally
+		npm install --save-dev hardhat
+		
+	create folder structure
+		contracts /// for solidity contracts
+		scripts /// for deployment scripts
+		test /// for testing scripts
+
+	Install ganache:
+		npm install ganache --global
+		ganache
+
+Commands:
+// compile contracts 
+	npx hardhat compile
+	npx hardhat compile --verbose
+	npx hardhat compile --test
+
+
+		
+
+	
+	
+		
+	
+	
+	
+	
+	
+	
