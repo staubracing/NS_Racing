@@ -1,20 +1,20 @@
 const { ethers } = require("hardhat");
 const { expect } = require("chai");
 
-describe("StaubToken", function () {
+describe("staubCoinMintableOwnable", function () {
     let owner, addr1, addr2;
     
 
     beforeEach(async function () {
         [owner, addr1, addr2] = await ethers.getSigners(); // getSigners() returns an array of Signer objects
         console.log(owner.address);
-        StaubToken = await ethers.getContractFactory("StaubToken");
+        StaubToken = await ethers.getContractFactory("staubCoinMintableOwnable");
         StaubToken = await StaubToken.deploy();
         await StaubToken.deployed();    
     });
 
     it("Should return the correct name and symbol", async function () {
-        expect(await StaubToken.name()).to.equal("StaubToken");
+        expect(await StaubToken.name()).to.equal("staubCoinMintableOwnable");
         expect(await StaubToken.symbol()).to.equal("STAUB");
     });
 

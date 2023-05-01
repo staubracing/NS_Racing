@@ -1,11 +1,4 @@
-// module.exports = {
-//     networks: {
-//       sepolia: {
-//         url: "http://localhost:8545",
-//         chainId: 5777
-//       }
-//     }
-//   };
+/// @ title: deploy_my_token
 
 
 // Path: scripts\deploy_my_token.js

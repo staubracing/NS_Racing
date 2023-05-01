@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx hardhat test"
+    "test": "hardhat test",
+    "assignment_1": "npx hardhat test test/assignment_1/tests.js",
+    "assignment_2": "npx hardhat test test/assignment_2/tests.js"
   },
   "keywords": [],
   "author": "staub",
@@ -17,6 +19,7 @@
     "hardhat": "^2.14.0"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.8.3",
     "dotenv": "^16.0.3"
   }
 }

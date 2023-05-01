@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.18;
 
-import "./safemath.sol";
-import "./IERC20.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-/// @title StaubToken
+/// @title staubCoinMintableOwnable
 /// @author Christopher Staub
 /// @notice This is a simple ERC20 token with a fixed supply and no additional functionality.
 
-contract StaubToken is IERC20 {
+contract staubCoinMintableOwnable is IERC20 {
 
 /// @dev SafeMath is used for all uint256 operations
 
@@ -28,8 +28,8 @@ contract StaubToken is IERC20 {
 
 /// @dev The constructor sets the token symbol, name, and decimals, and mints the initial supply to the contract creator.
     constructor() {
-        symbol = "STAUB";
-        name = "StaubToken";
+        symbol = "STAUB2";
+        name = "staubCoinMintableOwnable";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals); // 1,000,000 tokens with 18 decimals
         balances[msg.sender] = _totalSupply;
