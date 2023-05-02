@@ -15,7 +15,7 @@ describe("staubCoinMintableOwnable", function () {
 
     it("Should return the correct name and symbol", async function () {
         expect(await StaubToken.name()).to.equal("staubCoinMintableOwnable");
-        expect(await StaubToken.symbol()).to.equal("STAUB");
+        expect(await StaubToken.symbol()).to.equal("SCMO");
     });
 
     it("Should return the correct total supply", async function () {

@@ -28,7 +28,7 @@ contract staubCoinMintableOwnable is IERC20 {
 
 /// @dev The constructor sets the token symbol, name, and decimals, and mints the initial supply to the contract creator.
     constructor() {
-        symbol = "STAUB2";
+        symbol = "SCMO";
         name = "staubCoinMintableOwnable";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals); // 1,000,000 tokens with 18 decimals
