@@ -22,6 +22,10 @@
 
 7. My test failed for total supply failed at first, I didnt have the correct number in the test `expect(await StaubToken.totalSupply()).to.equal(ethers.utils.parseEther("1000000"));` I had 10000000000000.  wha tis ethers.utils.parseEhter?
 
-8. That brings up another question, How do I know what to test?  Test each function/event?
+8. That brings up another question, How do I know what to test?  Test each function/event? I have a feeling this is the million dolloar question.  I am sure it depends on the contract.  But I am sure there are some best practices.  I am sure I will learn more as I go.  But I am just curious if there is a general rule of thumb.
 
-9. 
+Assignment #2 Questions:
+
+1. How Do I know the owner is?  Is it the contact that deploys the contract?  say for fees paid back to owner do you use you address?  or is it the address that deployed the contract?
+
+2. 
