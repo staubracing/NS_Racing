@@ -3,12 +3,13 @@ pragma solidity >=0.8.18;
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @title staubCoinMintableOwnable
 /// @author Christopher Staub
 /// @notice This is a simple ERC20 token with a fixed supply and no additional functionality.
 
-contract staubCoinMintableOwnable is IERC20 {
+contract staubCoinMintableOwnable is IERC20, Ownable {
 
 /// @dev SafeMath is used for all uint256 operations
 

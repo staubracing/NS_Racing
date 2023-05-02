@@ -4,6 +4,4 @@ coverage
 artifacts/contracts
 #hardhat folders
 cache
-artifacts/build-info
-artifacts/coverage
-artifacts/cache
+artifacts
