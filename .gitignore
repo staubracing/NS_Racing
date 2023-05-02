@@ -1,6 +1,15 @@
 node_modules
 .env
-coverage
 
+artifacts\contracts
+artifacts\cache
+artifacts\build-info
+artifacts\@openzeppelin\contracts
+artifacts\@openzeppelin\contracts-upgradeable
 #hardhat folders
+artifacts\build-info
+artifacts\contracts
+artifacts\cache
+artifacts\@openzeppelin\contracts
 cache
+
