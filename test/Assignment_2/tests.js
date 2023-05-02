@@ -49,6 +49,13 @@ describe("staubCoinMintableOwnable", function () {
         );
     });
 
+    it("should mint tokens", async function () {
+        await StaubToken.mint(await addr1.getAddress(), 100);
+        expect(await StaubToken.balanceOf(await addr1.getAddress())).to.equal(100);
+        console.log(await StaubToken.balanceOf(await addr1.getAddress()));
+    });
+   
+
 
 });
 
