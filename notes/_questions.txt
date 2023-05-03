@@ -28,4 +28,8 @@ Assignment #2 Questions:
 
 1. How Do I know the owner is?  Is it the contact that deploys the contract?  say for fees paid back to owner do you use you address?  or is it the address that deployed the contract?
 
-2. 
+2. For deploying,  I updated my deploy.js file to have both my contracts in it.  Now when say I use the general delpoy command `npx hardhat run --network localhost scripts/deploy.js` it will of ocurse run both deploy code blocks.  How do I do this if I only want to deploy one of them?
+
+3. How can test the coin when I have deployed to the local hardhat network?
+
+4.
