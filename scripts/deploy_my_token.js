@@ -1,8 +1,8 @@
-/// @ title: deploy_my_token
+/// @ title: deploy.js
+/// @ author: Staub
 
-
-// Path: scripts\deploy_my_token.js
 const hre = require("hardhat"); // import hardhat
+
 async function main() { // async function
   const contract = await hre.ethers.getContractFactory("StaubToken"); // get contract factory
   const c = await contract.deploy(); // deploy contract
