@@ -16,15 +16,18 @@ describe("StaubToken", function () {
     it("Should return the correct name and symbol", async function () {
         expect(await StaubToken.name()).to.equal("StaubToken");
         expect(await StaubToken.symbol()).to.equal("STAUB");
+        console.log('Name:', (await StaubToken.name()), 'Symbol is:', (await StaubToken.symbol()));
     });
 
     it("Should return the correct total supply", async function () {
         expect(await StaubToken.totalSupply()).to.equal(ethers.utils.parseEther("1000000")); // 1 million tokens with 18 decimals
+        console.log('Total supply is:', (await StaubToken.totalSupply()));
     });
 
     it("Should assign the total supply of tokens to the owner", async function () { // 1 million tokens with 18 decimals
         const ownerBalance = await StaubToken.balanceOf(await owner.getAddress()); // owner is the first account in the hardhat node list
         expect(await StaubToken.totalSupply()).to.equal(ownerBalance); // 1 million tokens with 18 decimals
+        console.log('Owner balance is:', (await StaubToken.balanceOf(await owner.getAddress())), 'And the owner is:', (await owner.getAddress()));
     });
 
     it("Should transfer tokens between accounts", async function () {
