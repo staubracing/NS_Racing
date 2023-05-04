@@ -13,7 +13,12 @@ async function main() { // async function
   const c2 = await contract2.deploy(); // deploy contract
   await c2.deployed(); // wait for contract to be deployed
   console.log("staubCoinMintableOwnable deployed to:", c2.address); // log contract address
+
+
+  return c.address, c2.address; // return contract add
 }
+
+module.export = main; // export main function
 
 main().catch((error) => {
   console.error(error);
