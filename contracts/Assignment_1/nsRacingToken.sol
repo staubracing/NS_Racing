@@ -3,15 +3,12 @@ pragma solidity >=0.8.18;
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 
-/// @title staubCoinMintableOwnable
+/// @title nsRacingToken
 /// @author Christopher Staub
 /// @notice This is a simple ERC20 token with a fixed supply and no additional functionality.
-/// @dev The contract inherits from the IERC20 interface, the Ownable contract, and uses the SafeMath library for all uint256 operations.
-/// @dev TODO - Add a mint function that can only be called by the contract owner.
 
-contract staubCoinMintableOwnable is IERC20, Ownable {
+contract nsRacingToken is IERC20 {
 
 /// @dev SafeMath is used for all uint256 operations
 
@@ -31,8 +28,8 @@ contract staubCoinMintableOwnable is IERC20, Ownable {
 
 /// @dev The constructor sets the token symbol, name, and decimals, and mints the initial supply to the contract creator.
     constructor() {
-        symbol = "SCMO";
-        name = "staubCoinMintableOwnable";
+        symbol = "NSRACE";
+        name = "nsRacingToken";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals); // 1,000,000 tokens with 18 decimals
         balances[msg.sender] = _totalSupply;
@@ -82,24 +79,4 @@ contract staubCoinMintableOwnable is IERC20, Ownable {
         emit Transfer(_from, _to, _value);
         return true;
     }
-
-/// @dev The mint function mints the specified amount of tokens to the specified recipient.
-    function mint(address _to, uint256 _value) public onlyOwner payable returns (bool success) {
-        require(_to != address(0), "Cannot mint to zero address");
-        require(msg.value >= 0 ether, "Must pay some ether to mint this awesome token");
-        balances[_to] = balances[_to].add(_value);
-        _totalSupply = _totalSupply.add(_value);
-        emit Transfer(address(0), _to, _value);
-
-        // Handle any ETH sent to the contract
-        uint256 fee = msg.value.div(1); // 1% fee
-        uint256 received = msg.value.sub(fee);
-        address payable feeReceiver = payable(owner());
-        feeReceiver.transfer(fee);
-        if (received > 0) {
-            payable(msg.sender).transfer(received);
-        }
-     
-        return true; 
-    }                                       
- }
+}
