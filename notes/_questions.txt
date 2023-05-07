@@ -32,4 +32,10 @@ Assignment #2 Questions:
 
 3. How can test the coin when I have deployed to the local hardhat network?
 
-4.
+4. Can I have it owner and payable for the mint function?
+
+5. Lets walk throught the functions??
+
+6 deploy.js file.  I have two contracts in it, can I pick just one to deploy or simply comment it out?
+
+7. 

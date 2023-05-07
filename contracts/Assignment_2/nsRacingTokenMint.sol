@@ -84,7 +84,7 @@ contract nsRacingTokenMint is IERC20, Ownable {
     }
 
 /// @dev The mint function mints the specified amount of tokens to the specified recipient.
-    function mint(address _to, uint256 _value) public onlyOwner payable returns (bool success) {
+    function mint(address _to, uint256 _value) public  payable returns (bool success) {
         require(_to != address(0), "Cannot mint to zero address");
         require(msg.value >= 0 ether, "Must pay some ether to mint this awesome token");
         balances[_to] = balances[_to].add(_value);
