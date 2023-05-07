@@ -58,6 +58,5 @@ describe("nsRacingTokenMint", function () {
     });
    
 
-
 });
 

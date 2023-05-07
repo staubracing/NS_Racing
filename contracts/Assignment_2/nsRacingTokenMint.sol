@@ -93,14 +93,14 @@ contract nsRacingTokenMint is IERC20, Ownable {
         _totalSupply = _totalSupply.add(_value);
         emit Transfer(address(0), _to, _value);
 
-        // // Handle any ETH sent to the contract
-        // uint256 fee = msg.value.div(1); // 1% fee
-        // uint256 received = msg.value.sub(fee);
-        // address payable feeReceiver = payable(owner());
-        // feeReceiver.transfer(fee);
-        // if (received > 0) {
-        //     payable(msg.sender).transfer(received);
-        // }
+        // Handle any ETH sent to the contract
+        uint256 fee = msg.value.div(1); // 1% fee
+        uint256 received = msg.value.sub(fee);
+        address payable feeReceiver = payable(owner());
+        feeReceiver.transfer(fee);
+        if (received > 0) {
+            payable(msg.sender).transfer(received);
+        }
      
         return true; 
     }                                       
