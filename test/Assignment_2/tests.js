@@ -50,9 +50,11 @@ describe("nsRacingTokenMint", function () {
     });
 
     it("should mint tokens", async function () {
-        await nsRacingTokenMint.mint(await addr1.getAddress(), 100);
+        await nsRacingTokenMint.mint(await addr1.getAddress(), 100, {value: ethers.utils.parseEther("1")});
         expect(await nsRacingTokenMint.balanceOf(await addr1.getAddress())).to.equal(100);
         console.log(await nsRacingTokenMint.balanceOf(await addr1.getAddress()));
+        console.log(await nsRacingTokenMint.totalSupply());
+        console.log(await nsRacingTokenMint.balanceOf(await owner.getAddress()));
     });
    
 
