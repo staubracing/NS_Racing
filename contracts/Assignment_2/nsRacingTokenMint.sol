@@ -24,7 +24,7 @@ contract nsRacingTokenMint is IERC20, Ownable {
     string public name;
     uint8 public decimals;
     uint256 public _totalSupply;
-    uint256 public price = 0.003 ether;
+    uint256 public price = 0.1 ether;
 
 /// @dev The balances mapping keeps track of the token balance of each address.
     mapping(address => uint256) balances;
@@ -88,7 +88,7 @@ contract nsRacingTokenMint is IERC20, Ownable {
 /// @dev The mint function mints the specified amount of tokens to the specified recipient.
     function mint(address _to, uint256 _value) public payable returns (bool success) {
         require(_to != address(0), "Cannot mint to zero address");
-        require(msg.value >= price, "Must pay some ether to mint this token"); // 0.003 ether per token minted 
+        require(msg.value >= price, "Must pay some ether to mint this token"); // 0.1 ether per token minted 
         balances[_to] = balances[_to].add(_value);
         _totalSupply = _totalSupply.add(_value);
         emit Transfer(address(0), _to, _value);
@@ -101,7 +101,6 @@ contract nsRacingTokenMint is IERC20, Ownable {
         if (received > 0) {
             payable(msg.sender).transfer(received);
         }
-     
         return true; 
     }                                       
  }
