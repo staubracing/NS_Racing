@@ -6,9 +6,6 @@ const { expect } = require("chai");
 describe("nsRacingTokenMint", function () {
     let owner, addr1, addr2;
 
-    
-    
-
     beforeEach(async function () {
         [owner, addr1, addr2] = await ethers.getSigners(); // getSigners() returns an array of Signer objects
         console.log('owner = ', (owner.address));
@@ -16,7 +13,7 @@ describe("nsRacingTokenMint", function () {
         console.log('addr2 = ', (addr2.address));
         nsRacingTokenMint = await ethers.getContractFactory("nsRacingTokenMint");
         nsRacingTokenMint = await nsRacingTokenMint.deploy();
-        await nsRacingTokenMint.deployed();    
+        await nsRacingTokenMint.deployed();
     });
 
     // it("Should return the correct name and symbol", async function () {
@@ -52,17 +49,17 @@ describe("nsRacingTokenMint", function () {
     //     console.log('Owner balance is:', (await nsRacingTokenMint.balanceOf(await owner.address)), 'And the owner is:', (await owner.address));
     // });
 
- 
+
     it("should mint tokens", async function () {
         // Mint 100 tokens to the first account and pay the required price
-        await nsRacingTokenMint.mint(await addr1.address, 100, {value: ethers.utils.parseEther("1")});
+        await nsRacingTokenMint.mint(await addr1.address, 100, { value: ethers.utils.parseEther("1") });
         console.log('Minted 100 tokens to address - ', (await addr1.address));
-        
-    
+
+
         // Verify that the first account's balance was updated correctly
         expect(await nsRacingTokenMint.balanceOf(await addr1.address)).to.equal(100);
         console.log('addr1 balance is:', (await nsRacingTokenMint.balanceOf(addr1.address)), 'account#:', (await addr1.address));
-    
+
         // // Verify that the total supply was updated correctly
         const expectedTotalSupply = ethers.utils.parseEther("1000000").add(100);
         expect(await nsRacingTokenMint.totalSupply()).to.equal(expectedTotalSupply);
@@ -72,31 +69,31 @@ describe("nsRacingTokenMint", function () {
 
 
         // Verify that the contract received the correct amount of ether
-    
+
         const expectedFee = ethers.utils.parseEther("0.01");
 
         // Get the initial balance of the fee receiver address
         const initialFeeReceiverBalance = await ethers.provider.getBalance(owner.address);
         console.log('Initial fee receiver balance is:', (await ethers.provider.getBalance(owner.address)), (await owner.address));
-        
+
         // Send a transaction to the contract
-        
-        
+
+
         // Get the final balances of the fee receiver and contract owner addresses
         const finalFeeReceiverBalance = await ethers.provider.getBalance(owner.address);
         const finalOwnerBalance = await ethers.provider.getBalance(await owner.getAddress());
         console.log('Final fee receiver balance is:', (await ethers.provider.getBalance(owner.address)));
-        
+
         // Check that the fee was transferred correctly
         // expect(finalFeeReceiverBalance.sub(initialFeeReceiverBalance)).to.equal(expectedFee);
         // expect(finalOwnerBalance).to.equal(expectedFee);
-        
-    
+
+
         // // Verify that the first account received the remainder of the payment
         // const expectedReceived = ethers.utils.parseEther("0.99");
         // expect(await ethers.provider.getBalance(await addr1.address)).to.equal(expectedReceived);
     });
-    
+
 
 });
 
